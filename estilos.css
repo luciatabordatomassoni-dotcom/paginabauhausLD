@@ -1,0 +1,177 @@
+/* ============================================================
+   HOJA DE ESTILOS EXTERNA — ESTÉTICA BAUHAUS
+   Diseño basado en los principios de la Bauhaus:
+   geometría, funcionalidad, tipografía sólida y color primario.
+   ============================================================ */
+
+
+/* --- VARIABLES GLOBALES ---
+   Definimos aquí los colores y tipografías del sistema Bauhaus.
+   Usar variables hace que sea fácil cambiar todo el diseño
+   desde un solo lugar. ---------------------------------------- */
+:root {
+  /* Paleta Bauhaus: negro, blanco, rojo, amarillo, azul */
+  --color-fondo:       #F5F2EB;   /* Blanco cálido, como papel de cartel */
+  --color-texto:       #1A1A1A;   /* Negro profundo para máxima legibilidad */
+  --color-acento-rojo: #D62828;   /* Rojo primario Bauhaus */
+  --color-acento-azul: #1B3A6B;   /* Azul profundo Bauhaus */
+  --color-acento-amar: #F5A623;   /* Amarillo cálido Bauhaus */
+  --color-borde:       #CCBFA8;   /* Borde sutil, tono cálido claro */
+
+  /* Tipografías inspiradas en la Bauhaus */
+  --fuente-titulo: 'Bebas Neue', 'Impact', sans-serif;   /* Títulos bold geométricos */
+  --fuente-cuerpo: 'IBM Plex Mono', 'Courier New', monospace; /* Cuerpo legible y técnico */
+
+  /* Espaciados del sistema */
+  --espacio-externo:   20px;   /* Margen fuera del contenedor */
+  --espacio-interno:   15px;   /* Padding dentro del contenedor */
+}
+
+
+/* --- RESET BÁSICO ---
+   Eliminamos márgenes y paddings predeterminados del navegador
+   para tener control total sobre el diseño. ------------------- */
+*, *::before, *::after {
+  box-sizing: border-box; /* El padding no agranda el elemento */
+  margin: 0;
+  padding: 0;
+}
+
+
+/* --- CUERPO DE LA PÁGINA ---
+   Fondo cálido Bauhaus, tipografía base y centrado vertical. --- */
+body {
+  background-color: var(--color-fondo);    /* Fondo crema cálido */
+  color: var(--color-texto);               /* Texto negro profundo */
+  font-family: var(--fuente-cuerpo);       /* Tipografía técnica para el cuerpo */
+  min-height: 100vh;                       /* Ocupa al menos toda la altura de pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;                     /* Centra el contenido horizontalmente */
+  padding: 40px var(--espacio-externo);    /* Aire alrededor del contenido */
+}
+
+
+/* --- CONTENEDOR PRINCIPAL (el div solicitado) ---
+   Div de 80% de ancho, centrado, con borde sutil,
+   margen de 20px y padding interno de 15px. ------------------- */
+.contenedor {
+  width: 80%;                              /* 80% del ancho disponible */
+  max-width: 960px;                        /* Límite máximo para pantallas grandes */
+  margin: var(--espacio-externo) auto;     /* 20px arriba/abajo, auto = centrado horizontal */
+  padding: var(--espacio-interno);         /* 15px de espacio interno en todos los lados */
+  border: 1px solid var(--color-borde);    /* Borde sutil color cálido claro */
+  background-color: #FFFFFF;              /* Fondo blanco limpio para el contenido */
+  position: relative;                     /* Necesario para el acento decorativo */
+}
+
+/* Línea de acento Bauhaus en el borde izquierdo del contenedor.
+   Este detalle evoca las líneas gráficas de los carteles Bauhaus. */
+.contenedor::before {
+  content: '';                            /* Elemento decorativo sin texto */
+  position: absolute;
+  top: 0;
+  left: -4px;                             /* Se posiciona ligeramente afuera */
+  width: 4px;                             /* Franja delgada de color */
+  height: 100%;
+  background-color: var(--color-acento-rojo); /* Acento rojo Bauhaus */
+}
+
+
+/* --- ENCABEZADO DEL CONTENEDOR ---
+   Barra de título con fondo oscuro al estilo Bauhaus. ---------- */
+.contenedor__encabezado {
+  background-color: var(--color-acento-azul); /* Azul Bauhaus de fondo */
+  color: #FFFFFF;                          /* Texto blanco sobre azul */
+  font-family: var(--fuente-titulo);       /* Tipografía geométrica de título */
+  font-size: 2rem;                         /* Tamaño grande y contundente */
+  letter-spacing: 0.15em;                  /* Espaciado entre letras tipo cartel */
+  text-transform: uppercase;              /* Todo en mayúsculas, estilo Bauhaus */
+  padding: 12px var(--espacio-interno);   /* Aire interno coherente con el sistema */
+  margin: calc(-1 * var(--espacio-interno)); /* Cancela el padding del padre para ir de borde a borde */
+  margin-bottom: var(--espacio-interno);  /* Restaura margen inferior */
+}
+
+
+/* --- SUBTÍTULO ---
+   Línea decorativa inferior con acento amarillo Bauhaus. ------- */
+.contenedor__subtitulo {
+  font-family: var(--fuente-titulo);       /* Tipografía geométrica */
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;                  /* Muy espaciado, estilo tipografía moderna */
+  text-transform: uppercase;
+  color: var(--color-acento-rojo);         /* Rojo para destacar el subtítulo */
+  border-bottom: 2px solid var(--color-acento-amar); /* Línea amarilla decorativa abajo */
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+
+/* --- PÁRRAFO DE TEXTO ---
+   Tipografía monoespaciada, interlineado cómodo. --------------- */
+.contenedor__texto {
+  font-family: var(--fuente-cuerpo);       /* Fuente técnica, legible */
+  font-size: 0.92rem;
+  line-height: 1.75;                       /* Interlineado generoso para comodidad lectora */
+  color: var(--color-texto);
+  margin-bottom: 16px;                     /* Espacio entre párrafos */
+}
+
+
+/* --- ETIQUETA / TAG DECORATIVO ---
+   Pequeña etiqueta geométrica estilo Bauhaus para categorías. -- */
+.tag {
+  display: inline-block;
+  background-color: var(--color-acento-amar); /* Fondo amarillo */
+  color: var(--color-texto);               /* Texto negro */
+  font-family: var(--fuente-titulo);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  margin-right: 6px;
+  margin-bottom: 16px;
+}
+
+
+/* --- SEPARADOR GEOMÉTRICO ---
+   Línea divisoria con proporciones Bauhaus. ------------------- */
+.separador {
+  border: none;
+  height: 3px;                             /* Grosor del separador */
+  background: linear-gradient(
+    to right,
+    var(--color-acento-rojo) 33.3%,       /* Rojo primario */
+    var(--color-acento-amar) 33.3% 66.6%, /* Amarillo primario */
+    var(--color-acento-azul) 66.6%         /* Azul primario */
+  );                                       /* Tres colores iguales, como la Bauhaus */
+  margin: var(--espacio-interno) 0;        /* Margen coherente con el sistema */
+}
+
+
+/* --- PIE DEL CONTENEDOR ---
+   Texto pequeño con fondo geométrico oscuro. ------------------- */
+.contenedor__pie {
+  background-color: var(--color-texto);   /* Fondo negro */
+  color: var(--color-fondo);              /* Texto crema claro */
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px var(--espacio-interno);
+  margin: 0 calc(-1 * var(--espacio-interno)) calc(-1 * var(--espacio-interno)); /* Va de borde a borde */
+  text-align: right;                      /* Alineado a la derecha */
+}
+
+
+/* --- RESPONSIVE: pantallas pequeñas ---
+   En móviles el contenedor ocupa todo el ancho disponible. ----- */
+@media (max-width: 600px) {
+  .contenedor {
+    width: 95%;                           /* Casi todo el ancho en pantallas chicas */
+  }
+
+  .contenedor__encabezado {
+    font-size: 1.4rem;                    /* Título más chico en mobile */
+  }
+}

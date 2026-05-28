@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Declaración del tipo de documento: le dice al navegador que es HTML5 -->
+
+<html lang="es">
+<!-- Etiqueta raíz del documento. lang="es" indica que está en español -->
+
+<head>
+  <!-- HEAD: sección invisible que configura la página -->
+
+  <meta charset="UTF-8">
+  <!-- Define la codificación de caracteres (permite tildes y ñ) -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hace que la página sea responsive: se adapta al ancho del dispositivo -->
+
+  <title>Bauhaus · Contenedor Base</title>
+  <!-- Título de la pestaña del navegador -->
+
+  <!-- ENLACE A LA HOJA DE ESTILOS EXTERNA -->
+  <!-- rel="stylesheet" le dice al navegador que es un archivo CSS -->
+  <!-- href="estilos.css" es la ruta al archivo (debe estar en la misma carpeta) -->
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- GOOGLE FONTS: cargamos las tipografías Bauhaus desde la web -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!--
+    Bebas Neue  → tipografía de títulos geométrica, similar a las grotescas Bauhaus
+    IBM Plex Mono → tipografía de cuerpo técnica y legible
+  -->
+
+</head>
+
+<body>
+  <!-- BODY: todo lo visible de la página va aquí -->
+
+
+  <!-- ============================================================
+       DIV CONTENEDOR PRINCIPAL
+       - Clase "contenedor" aplica los estilos del CSS externo
+       - Tiene: 80% de ancho, centrado con margin: auto,
+         borde sutil, margin: 20px, padding interno: 15px
+       ============================================================ -->
+  <div class="contenedor">
+
+
+    <!-- ENCABEZADO: título principal dentro del contenedor -->
+    <h1 class="contenedor__encabezado">
+      Bauhaus Design System
+    </h1>
+    <!-- El doble guion (__) en el nombre de clase es metodología BEM:
+         bloque__elemento — ayuda a organizar y leer el CSS -->
+
+
+    <!-- SUBTÍTULO: texto secundario con acento de color -->
+    <p class="contenedor__subtitulo">
+      Geometría · Función · Forma
+    </p>
+
+
+    <!-- TAGS / ETIQUETAS: categorías decorativas al estilo Bauhaus -->
+    <span class="tag">Tipografía</span>
+    <span class="tag">Color</span>
+    <span class="tag">Estructura</span>
+
+
+    <!-- PÁRRAFO PRINCIPAL: texto de cuerpo -->
+    <p class="contenedor__texto">
+      La Bauhaus fue una escuela de diseño fundada en 1919 por Walter Gropius
+      en Weimar, Alemania. Su filosofía central era la unión entre arte,
+      artesanía y tecnología industrial — creando objetos funcionales que
+      también fueran estéticamente precisos.
+    </p>
+
+    <!-- SEPARADOR GEOMÉTRICO: línea en tres colores primarios -->
+    <hr class="separador">
+    <!-- La etiqueta <hr> es una línea horizontal.
+         En el CSS le damos estilo con los tres colores Bauhaus -->
+
+
+    <!-- SEGUNDO PÁRRAFO -->
+    <p class="contenedor__texto">
+      Los colores primarios — rojo, amarillo y azul — junto al negro y blanco,
+      son el lenguaje visual de la Bauhaus. La tipografía sans-serif geométrica
+      y los bloques de color sólido definen su identidad gráfica inconfundible.
+    </p>
+
+
+    <!-- PIE DEL CONTENEDOR: información secundaria o créditos -->
+    <div class="contenedor__pie">
+      Bauhaus 1919–1933 &mdash; Weimar · Dessau · Berlín
+      <!-- &mdash; es el código HTML para el guion largo — -->
+    </div>
+
+
+  </div>
+  <!-- FIN del contenedor principal -->
+
+
+</body>
+</html>
